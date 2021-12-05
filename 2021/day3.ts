@@ -1,11 +1,7 @@
-import { read } from "../utils"
+import { read, transpose } from "../utils"
 
 type Bit = "0" | "1";
 type Word = Bit[]; 
-
-const transpose = (raport: Bit[][]) => {
-    return raport[0].map((_, col) => raport.map(row => row[col]));
-}
 
 const mostFrequent = (raport: Word[], index: number) => {
     const transposed = transpose(raport);
