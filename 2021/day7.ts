@@ -2,9 +2,9 @@ import { read } from "../utils"
 
 const allCosts = (crabs: number[], fuelCost: (distance: number) => number): number[] => {
     const max = Math.max(...crabs);
-    const positions = [...Array(max).keys()]
+    const positions = [...Array(max).keys()];
     return positions.map(pos => {
-        return crabs.reduce((acc, cur) =>  acc + fuelCost(Math.abs(cur - pos)), 0)
+        return crabs.reduce((acc, cur) =>  acc + fuelCost(Math.abs(cur - pos)), 0);
     })
 }
 
