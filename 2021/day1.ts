@@ -1,15 +1,4 @@
-import { read } from "../utils"
-
-const zip = <T>(lists: T[][]): T[][] => {
-    const size = lists.reduce((acc, list) => Math.min(acc, list.length), lists[0].length);
-
-    let zipped_list: T[][] = [];
-    for (let i = 0; i < size; i++) {
-        const entry = lists.map(list => list[i]);
-        zipped_list.push(entry);
-    }
-    return zipped_list;
-}
+import { read, zip} from "../utils"
 
 const numOfIncreses = (depths: number[]) => {
     const pairs = zip([
